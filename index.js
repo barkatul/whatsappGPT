@@ -1,10 +1,11 @@
 const OpenAI = require('openai');
 const { DisconnectReason, useMultiFileAuthState } = require('@whiskeysockets/baileys');
+require('dotenv').config();
 
 const makeWASocket = require('@whiskeysockets/baileys').default;
 const replies = [];
 
-const apiKey = "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"
+const apiKey = process.env.apiKey;
 const openai = new OpenAI({
     apiKey: apiKey,
 })
